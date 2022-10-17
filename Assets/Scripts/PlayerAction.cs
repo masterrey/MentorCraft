@@ -10,6 +10,10 @@ public class PlayerAction : MonoBehaviour
     GameObject head;
     [SerializeField]
     GameObject crosshair;
+
+    [SerializeField]
+    GameObject[] objects;
+    int i = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +23,19 @@ public class PlayerAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
 
-            
-            RaycastHit hit;
+
+        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            i++;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            i--;
+        }
+
+        i = Mathf.Clamp(i, 0, objects.Length);
+        RaycastHit hit;
 
         if (Physics.Raycast(head.transform.position, head.transform.forward, out hit, 100))
         {
@@ -36,7 +49,7 @@ public class PlayerAction : MonoBehaviour
             {
 
                 Vector3 point = hit.point + hit.normal/2;
-                Instantiate(ThingPrefab, new Vector3(Mathf.Round(point.x), Mathf.Round(point.y), Mathf.Round(point.z)), Quaternion.identity);
+                Instantiate(objects[i], new Vector3(Mathf.Round(point.x), Mathf.Round(point.y), Mathf.Round(point.z)), Quaternion.identity);
             }
         }
     }

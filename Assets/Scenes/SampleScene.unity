@@ -303,7 +303,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 885281486}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 86.183, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
@@ -438,6 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 6398557661510234628}
   head: {fileID: 829915003}
+  velocity: 10
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +872,30 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 73104064}
+    - target: {fileID: 885281481, guid: 8ff17960b9bdd4d0a905e10025f654f2, type: 3}
+      propertyPath: objects.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 885281481, guid: 8ff17960b9bdd4d0a905e10025f654f2, type: 3}
+      propertyPath: objects.Array.data[0]
+      value: 
+      objectReference: {fileID: 2916832537887301723, guid: d57f604e643fa4ebca93a275b8bd015f,
+        type: 3}
+    - target: {fileID: 885281481, guid: 8ff17960b9bdd4d0a905e10025f654f2, type: 3}
+      propertyPath: objects.Array.data[1]
+      value: 
+      objectReference: {fileID: 7571807607825144356, guid: 0d223777b1f15454d8593ec795845ab2,
+        type: 3}
+    - target: {fileID: 885281481, guid: 8ff17960b9bdd4d0a905e10025f654f2, type: 3}
+      propertyPath: objects.Array.data[2]
+      value: 
+      objectReference: {fileID: 2337623316153494024, guid: 690c8f6b967c5449ca88a60095f31c59,
+        type: 3}
+    - target: {fileID: 885281481, guid: 8ff17960b9bdd4d0a905e10025f654f2, type: 3}
+      propertyPath: objects.Array.data[3]
+      value: 
+      objectReference: {fileID: 623135698852180110, guid: e18af637d471f494587a570637fe2f79,
+        type: 3}
     - target: {fileID: 6398557662214595360, guid: 8ff17960b9bdd4d0a905e10025f654f2,
         type: 3}
       propertyPath: m_Enabled
@@ -886,6 +911,21 @@ PrefabInstance:
       propertyPath: caracter
       value: 
       objectReference: {fileID: 885281487}
+    - target: {fileID: 6398557662214595364, guid: 8ff17960b9bdd4d0a905e10025f654f2,
+        type: 3}
+      propertyPath: timePulo
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398557662214595364, guid: 8ff17960b9bdd4d0a905e10025f654f2,
+        type: 3}
+      propertyPath: forcaPulo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398557662214595364, guid: 8ff17960b9bdd4d0a905e10025f654f2,
+        type: 3}
+      propertyPath: velocidade
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 6398557662214595365, guid: 8ff17960b9bdd4d0a905e10025f654f2,
         type: 3}
       propertyPath: m_RootOrder

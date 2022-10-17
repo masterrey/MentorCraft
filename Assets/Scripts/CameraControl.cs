@@ -9,6 +9,8 @@ public class CameraControl : MonoBehaviour
     [SerializeField]
     private GameObject head;
     bool fps = false;
+    [SerializeField]
+    float velocity = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class CameraControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (fps)
         {
@@ -25,7 +27,7 @@ public class CameraControl : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, target.transform.position, Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, target.transform.position, Time.smoothDeltaTime* velocity);
             transform.LookAt(target.transform.parent);
         }
 
