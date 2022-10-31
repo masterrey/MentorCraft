@@ -13,6 +13,9 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField]
     GameObject[] objects;
+
+    [SerializeField]
+    Inventario inventario;
     int i = 0;
     // Start is called before the first frame update
     void Start()
@@ -49,7 +52,22 @@ public class PlayerAction : MonoBehaviour
             {
 
                 Vector3 point = hit.point + hit.normal/2;
-                Instantiate(objects[i], new Vector3(Mathf.Round(point.x), Mathf.Round(point.y), Mathf.Round(point.z)), Quaternion.identity);
+                if (inventario.ChecktIten(i))
+                {
+                    inventario.GetIten(i);
+                    Instantiate(objects[i], new Vector3(Mathf.Round(point.x), Mathf.Round(point.y), Mathf.Round(point.z)), Quaternion.identity);
+                }
+            }
+
+            if (Input.GetButtonDown("Fire2"))
+            {
+                if (hit.collider.CompareTag("Cubo"))
+                {
+                    Destroy(hit.collider.gameObject);
+
+                    inventario.SetIten(i,1);
+                }
+                   
             }
         }
     }

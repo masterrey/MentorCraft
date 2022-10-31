@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7571807607825144359}
   m_Layer: 0
   m_Name: grama
-  m_TagString: Untagged
+  m_TagString: Cubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
