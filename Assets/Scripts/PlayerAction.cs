@@ -10,9 +10,9 @@ public class PlayerAction : MonoBehaviour
     GameObject head;
     [SerializeField]
     GameObject crosshair;
-
     [SerializeField]
-    GameObject[] objects;
+    BlockManager blockManager;
+    
 
     [SerializeField]
     Inventario inventario;
@@ -37,7 +37,7 @@ public class PlayerAction : MonoBehaviour
             i--;
         }
 
-        i = Mathf.Clamp(i, 0, objects.Length);
+        i = Mathf.Clamp(i, 0, blockManager.objects.Length);
         RaycastHit hit;
 
         if (Physics.Raycast(head.transform.position, head.transform.forward, out hit, 100))
@@ -55,7 +55,7 @@ public class PlayerAction : MonoBehaviour
                 if (inventario.ChecktIten(i))
                 {
                     inventario.GetIten(i);
-                    Instantiate(objects[i], new Vector3(Mathf.Round(point.x), Mathf.Round(point.y), Mathf.Round(point.z)), Quaternion.identity);
+                    Instantiate(blockManager.objects[i], new Vector3(Mathf.Round(point.x), Mathf.Round(point.y), Mathf.Round(point.z)), Quaternion.identity);
                 }
             }
 
